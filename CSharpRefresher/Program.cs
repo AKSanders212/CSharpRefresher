@@ -11,15 +11,25 @@ namespace CSharpRefresher
             Start();
         }
 
-        public static void Start()
+        public static async void Start()
         {
             Console.WriteLine("Please enter two numbers.");
             float number1 = float.Parse(Console.ReadLine());
             float number2 = float.Parse(Console.ReadLine());
 
             DetermineOption(number1, number2);
-        }
 
+            var something = ConnectToInternet(); // similar to auto in c++
+
+            // do something else
+            // do a lot of things
+
+            var value = await something;
+
+            //use the value
+            Console.WriteLine(value);
+        }
+        
      
 
         public static void DetermineOption(float n1, float n2)
